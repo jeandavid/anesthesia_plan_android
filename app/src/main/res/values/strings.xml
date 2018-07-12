@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">תוכניות</string>
+    <string name="add_plan_title">תוכנית חדשה</string>
+    <string name="edit_plan_title">עדכון תוכנית</string>
+    <string name="plan_detail_title">פרטי התוכנית</string>
+    <string name="menu_create_plan">שמור</string>
+    <string name="menu_delete_plan">מחיקה</string>
+    <string name="question_step_counter">%1$d / %2$d</string>
+    <string name="successfully_added_plan_message">התוכנית החדשה נשמרה</string>
+    <string name="successfully_updated_plan_message">התוכנית עודכנה</string>
+    <string name="successfully_deleted_plan_message">התוכנית נמחקה</string>
+</resources>

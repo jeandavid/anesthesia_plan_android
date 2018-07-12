@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View.OnClickListener" />
+        <variable
+            name="choice"
+            type="com.elishou.anesthesiaplan.data.Choice" />
+        <variable
+            name="listener"
+            type="com.elishou.anesthesiaplan.multichoicelist.ChoiceItemListener" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/listPreferredItemHeight"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardBackgroundColor="@color/colorBackgroundLight"
+        android:onClick="@{() -> listener.onChoiceSelected(choice)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/cardview_choice_margin_bottom"
+            android:background="@{choice.selected ? @drawable/choice_selected : @drawable/choice_unselected}">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/cardview_choice_padding"
+                android:gravity="right"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@{choice.selected ? @color/colorTextLight : @color/colorTextPrimary}"
+                android:text="@{choice.body}"
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

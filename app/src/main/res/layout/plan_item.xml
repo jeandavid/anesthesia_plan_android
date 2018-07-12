@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View.OnClickListener" />
+        <variable
+            name="plan"
+            type="com.elishou.anesthesiaplan.plans.PlanItem" />
+        <variable
+            name="listener"
+            type="com.elishou.anesthesiaplan.plans.PlanItemListener" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/cardview_default_elevation"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/cardview_plan_corner_radius"
+        app:cardBackgroundColor="@color/colorBackgroundLight"
+        android:onClick="@{() -> listener.onPlanSelected(plan.id)}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/cardview_plan_padding_top"
+            android:paddingBottom="@dimen/cardview_plan_padding_bottom"
+            android:paddingStart="@dimen/cardview_plan_padding_start"
+            android:paddingEnd="@dimen/cardview_plan_padding_end">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                android:textColor="@color/colorAccent"
+                android:text="@{plan.header}"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/header"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/colorPrimaryLight"
+                android:text="@{plan.subheader}"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:textColor="@color/colorTextSecondary"
+                android:text="@{plan.dateStr}"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>
